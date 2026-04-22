@@ -1,0 +1,23 @@
+# acat-inspect dependencies
+# Pinned as of April 22, 2026.
+# Update via `pip install --upgrade inspect-ai` and bump the version below.
+
+# Core: UK AISI Inspect evaluation framework (MIT License)
+# https://github.com/UKGovernmentBEIS/inspect_ai
+# https://pypi.org/project/inspect-ai/
+inspect-ai>=0.3.130
+
+# Provider SDKs — install what you need for the models you plan to evaluate.
+# Uncomment per target provider. Inspect supports additional providers
+# (Bedrock, Azure, Together, Groq, Cloudflare, Goodfire, local vLLM, etc.);
+# see https://inspect.aisi.org.uk/ for the full list.
+
+anthropic>=0.40.0          # Claude family
+openai>=1.50.0             # GPT family
+google-generativeai>=0.8.0 # Gemini family
+
+# Analysis: for the eventual H0/H1 KS-test against the primary dataset.
+# Not needed for scaffold; uncomment when collection phase begins.
+# scipy>=1.13.0
+# pandas>=2.2.0
+# numpy>=1.26.0
