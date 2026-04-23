@@ -28,7 +28,7 @@ import re
 from dataclasses import dataclass, field
 from typing import Optional
 
-from inspect_ai.scorer import Score, Scorer, Target, scorer
+from inspect_ai.scorer import Score, Scorer, Target, scorer, mean, std
 from inspect_ai.solver import TaskState
 
 
@@ -261,7 +261,7 @@ def _detect_flags(result: ACATResult, top_quartile_threshold: int = 540) -> list
 # ---------------------------------------------------------------------------
 
 
-@scorer(metrics=["mean", "std"])
+@scorer(metrics=[mean(), std()])
 def acat_scorer() -> Scorer:
     """Inspect Scorer for ACAT v1.0 responses.
 
